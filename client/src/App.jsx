@@ -2,33 +2,37 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { BrowserRouter as Router, Route, Redirect } from'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from'react-router-dom'
+import Dashboard from './components/Dashboard'
+import Tradesheet from './components/Tradesheet'
+import EditTradesheet from './components/EditTradesheet'
+import Layout from './components/Layout'
+import NotFound from './components/NotFound'
+
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <Router>
-      <Navbar /> {/* TODO */}
-        <h1>TEST ROUTING</h1>
-        <Route exact path="/" element={<Dashboard />} /> {/* TODO: UPDATE TO LOGIN ONCE CREATED */}
-        {/* <PrivateRoute path="/hidden" component={Hidden} /> */}
-        <Route path="/dashboard" element={<Dashboard />} /> {/* TODO */}
-        <Route exact path="/tradesheet" element={<Tradesheet />} /> {/* TODO */}
-        <Route path="/tradesheet/:id" element={<Tradesheet />} /> {/* TODO */}
-        <Route path="*" element={NotFound} /> {/* TODO */}
-    </Router>
+    <div className="App"> {/* TODO: MAY NEED TO DELETE DIV */}
+      <Router>
+          <h1>TEST ROUTING</h1>
+          <Routes>
+            <Route path="/" element={<Layout />} > {/* SETS THE HEADER AND NAV FOR ALL NESTED ROUTES */}
+              <Route path="dashboard"> {/* TODO */}
+                <Route index element={<Dashboard />} /> {/* TODO */}
+              </Route>
+              <Route path="tradesheet" >
+                <Route index element={<Tradesheet />} /> {/* TODO */}
+                <Route path=":id" element={<EditTradesheet />} /> {/* TODO */}
+              </Route>
+              <Route path="*" element={<NotFound />} /> {/* TODO */}
+            </Route>
+          </Routes>
+      </Router>
+    </div>
   );
 }
-
-function NotFound() {
-  return (
-    <div>
-      <h1>ERROR 404</h1>
-      <p>Page not found</p>
-      <Link to="/">Return to Dashboard</Link>
-    </div>
-  )
-  }
 
 export default App
