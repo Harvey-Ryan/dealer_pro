@@ -2,9 +2,11 @@
 
 const Dashboard = () => {
 
-    
+
     return (
-        <h1>Dashboard Test</h1>
+        <div className="padded">
+            <h1>Dashboard Test</h1>
+        </div>
     )
 };
 

@@ -1,9 +1,24 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  /* max-width: 1280px; */
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  /* text-align: center; */
+  line-height: nowrap;
 }
+
+.padded {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+.printer {
+  width: 816;
+  height: 1056;
+}
+
+.whitespace {
+  margin: 0;}
 
 .logo {
   height: 6em;

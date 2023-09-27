@@ -15,9 +15,8 @@ import NotFound from './components/NotFound'
 function App() {
 
   return (
-    <div className="App"> {/* TODO: MAY NEED TO DELETE DIV */}
+    // <div className="App"> {/* TODO: MAY NEED TO DELETE DIV */}
       <Router>
-          <h1>TEST ROUTING</h1>
           <Routes>
             <Route path="/" element={<Layout />} > {/* SETS THE HEADER AND NAV FOR ALL NESTED ROUTES */}
               <Route path="dashboard"> {/* TODO */}
@@ -31,7 +30,7 @@ function App() {
             </Route>
           </Routes>
       </Router>
-    </div>
+    // </div>
   );
 }
 
