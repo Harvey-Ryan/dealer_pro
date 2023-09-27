@@ -3,6 +3,11 @@
 const mongoose = require('mongoose');
 
 const VehicleSchema = new mongoose.Schema({
+    stocknumber: {
+        type: String,
+        required: [true, 'Stock number is required.'],
+        minLength: [3, 'Stock number must be at least 3 characters long.'],
+    },
     vin: {
         type: String,
         required: [true, 'VIN is required.'],
@@ -11,19 +16,19 @@ const VehicleSchema = new mongoose.Schema({
     make: {
         type: String,
         required: [true, 'Make is required.']
-        },
+    },
     model: {
         type: String,
         required: [true, 'Model is required.']
-        },
+    },
     year: {
         type: Number,
         required: [true, 'Year is required.']
-        },
+    },
     color: {
         type: String,
         required: [true, 'Color is required.']
-        },
+    },
     mileage: {
         type: Number,
         required: [true, 'Mileage is required.'],
@@ -54,9 +59,9 @@ const VehicleSchema = new mongoose.Schema({
     comments: {
         type: String,
         required: [true, 'Comments are required.'],
-        maxLength: [100, 'Comments must be less than 256 characters long.'],
+        maxLength: [255, 'Comments must be less than 256 characters long.'],
     },
-    // TODO: CONVERT OBJECTS TO STRINGS IN THE DATABASE
+    //TODO: TRIGGER ONLY 1 TRUE VALUE IN THE FORM / DB
     mechanical: {
         type: String,
         required: [true, 'You must choose Mechanical condition.']
@@ -65,15 +70,34 @@ const VehicleSchema = new mongoose.Schema({
         type: String,
         required: [true, 'You must choose Appearance condition.']
     },
+    // TODO: CONVERT OBJECTS TO STRINGS IN THE DATABASE
     carfax: {
         type: String,
-        required: [true, 'Please select applicable CarFax fields.']
+        default: JSON.stringify({ report: false, damage: false, branded: false }),
+        required: [true, 'Please select applicable CarFax fields.'],
     },
     options: {
         type: String,
-        required: [true, 'Please select applicable Options.']
-    }
-});
+        default: JSON.stringify({
+            twobyfour: false,
+            fourbyfour: false,
+            quadsts: false,
+            sixcyl: false,
+            fourcyl: false,
+            thirdrow: false,
+            rearair: false,
+            sunroof: false,
+            autotrans: false,
+            eightcyl: false,
+            manualtrans: false,
+            cdplayer: false,
+            leather: false,
+            painted: false,
+            salvagetitle: false,
+        }),
+        required: [true, 'Please select applicable Options.'],
+    },
+}, { timestamps: true });
 
 const Vehicle = mongoose.model('dealer_pro', VehicleSchema);
 

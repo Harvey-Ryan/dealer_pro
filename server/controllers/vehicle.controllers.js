@@ -1,5 +1,5 @@
 
-const Vehicle = require('./models/vehicle');
+const Vehicle = require('../models/vehicle.model');
 
 //Create a Vehicle
 const createVehicle = (req, res) => {
@@ -42,6 +42,7 @@ const getVehicle = (req, res) => {
 const updateVehicle = (req, res) => {
     const { id } = req.params;
     const {
+        stocknumber,
         vin,
         make,
         model,
@@ -61,6 +62,9 @@ const updateVehicle = (req, res) => {
     } = req.body;
 
     const errors = {};
+    if (!stocknumber || stocknumber.length < 3) {
+        errors.stocknumber = "Stock number is required.";
+    }
     if (!vin || vin.length < 17) {
         errors.vin = "VIN is required.";
     }
@@ -120,6 +124,7 @@ const updateVehicle = (req, res) => {
     }
 
     Vehicle.findByIdAndUpdate(id, {
+        stocknumber,
         vin,
         make,
         model,
@@ -153,7 +158,7 @@ const updateVehicle = (req, res) => {
 
 //Delete a Vehicle with an id
 const deleteVehicle = (req, res) => {
-    const { id } = req.params.id;
+    const { id } = req.params;
 
     Vehicle.findByIdAndRemove(id)
         .then(vehicle => {
@@ -161,8 +166,9 @@ const deleteVehicle = (req, res) => {
                 res.status(404).json({
                     message: "Vehicle not found with id " + id
                 });
+            } else {
+                res.json({ message: "Vehicle deleted successfully!" });
             }
-            res.json({ message: "Vehicle deleted successfully!" });
         })
         .catch((err) => {
             res.status(400).json(err);
@@ -177,59 +183,3 @@ module.exports = {
     updateVehicle,
     deleteVehicle
 };
-
-//Create and Save a Vehicle
-
-// exports.create = (req, res) => {
-//     //Validate request
-//     if(!req.body.make ||
-//         !req.body.model ||
-//         !req.body.year ||
-//         !req.body.color ||
-//         !req.body.mileage ||
-//         !req.body.bookedat ||
-//         !req.body.blackbook ||
-//         !req.body.retail ||
-//         !req.body.tires ||
-//         !req.body.setby ||
-//         !req.body.comments ||
-//         !req.body.mechanical ||
-//         !req.body.appearance ||
-//         !req.body.carfax ||
-//         !req.body.options) {
-//         res.status(400).send({
-//             message: "Please complete all fields."
-//         });
-//         return;
-//     }
-
-// //Create a Vehicle
-// const createVehicle = new Vehicle({
-//     make: req.body.make,
-//     model: req.body.model,
-//     year: req.body.year,
-//     color: req.body.color,
-//     mileage: req.body.mileage,
-//     bookedat: req.body.bookedat,
-//     blackbook: req.body.blackbook,
-//     retail: req.body.retail,
-//     tires: req.body.tires,
-//     setby: req.body.setby,
-//     comments: req.body.comments,
-//     mechanical: req.body.mechanical,
-//     appearance: req.body.appearance,
-//     carfax: req.body.carfax,
-//     options: req.body.options
-// });
-
-//Save Vehicle in the database
-//     vehicle.save()
-//        .then(data => {
-//             res.send(data);
-//         })
-//        .catch(err => {
-//             res.status(500).send({
-//                 message: err.message || "Some error occurred while creating the Vehicle."
-//             });
-//         });
-// };

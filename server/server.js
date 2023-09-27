@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 require("./config/mongoose.config"); //Connect to database
-require("./routes/note.routes")(app); //Import routes and pass (app)
+require("./routes/vehicle.routes")(app); //Import routes and pass (app)
 
 
 app.listen(8000, () => {
