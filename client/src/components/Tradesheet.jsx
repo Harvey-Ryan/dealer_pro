@@ -5,7 +5,7 @@ const Tradesheet = () => {
 
 
     return (
-        <div className='printer d-flex justify-content-center container flex-column'>
+        <div className='printer d-flex container flex-column'>
             <div className=' d-flex w-100 justify-content-between'>
                 <div className='d-flex flex-column'>
                     <h2 className="text-danger whitespace">Store Name</h2>
@@ -14,8 +14,8 @@ const Tradesheet = () => {
                 </div>
                 <a className='align top' href='/dashboard'>Back to Dashboard</a>
             </div>
-            <form className='d-flex flex-column align-items-center justify-content-center'>
-                <div className='form-group d-flex justify-content-around m-2 w-100'>
+            <form className='d-flex flex-column align-items-center'>
+                <div className='form-group d-flex justify-content-around m-2 w-75'>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
                         <label class="form-check-label" for="inlineCheckbox1">Carfax</label>
@@ -70,7 +70,7 @@ const Tradesheet = () => {
                     </div>
                 </div>
                 <div className='d-flex justify-content-around w-100 mt-3 p-2'>
-                    <div className='d-flex flex-column w-50'>
+                    <div className='d-flex flex-column w-50 p-5'>
                         <h3><u>Mechanical:</u></h3>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
@@ -85,7 +85,7 @@ const Tradesheet = () => {
                             <label class="form-check-label" for="inlineCheckbox3">Poor</label>
                         </div>
                     </div>
-                    <div className='d-flex flex-column w-50'>
+                    <div className='d-flex flex-column w-50 p-5'>
                         <h3><u>Appearance:</u></h3>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
@@ -102,7 +102,7 @@ const Tradesheet = () => {
                     </div>
                 </div>
                 <div className='d-flex justify-content-around w-100 mt-3'>
-                    <div className='d-flex row flex-column w-50 mt-4'>
+                    <div className='d-flex row flex-column w-50 mt-4 p-5'>
                         <h3><u>Value:</u></h3>
                         <div class="form-group row d-flex align-items-center justify-content-between">
                             <label className='d-flex col-5 col-form-label justify-content-start' for="formGroupExampleInput">Booked-In Ammount: </label>
@@ -117,7 +117,7 @@ const Tradesheet = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='d-flex row flex-column w-50 mt-4'>
+                    <div className='d-flex row flex-column w-50 mt-4 p-5'>
                         <div className='d-flex w-50'>
                             <h3 className=''><u>Mileage:</u></h3>
                             <input type="text" class="form-control" placeholder="Mileage" />
@@ -135,6 +135,104 @@ const Tradesheet = () => {
                         </div>
                     </div>
                 </div>
+                <div className='d-flex mt-5 justify-content-between w-100'>
+                    <div className='d-flex flex-column w-50 p-5'>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
+                            <label class="form-check-label" for="inlineCheckbox1">Retail</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                            <label class="form-check-label" for="inlineCheckbox2">Wholesale</label>
+                        </div>
+                    </div>
+                    <div className='d-flex w-50 p-5'>
+                        <div className='d-flex flex-column w-50 p-2'>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
+                                <label class="form-check-label" for="inlineCheckbox1">2x4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                                <label class="form-check-label" for="inlineCheckbox2">4x4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                                <label class="form-check-label" for="inlineCheckbox2">Quad STS</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                                <label class="form-check-label" for="inlineCheckbox2">V6</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                                <label class="form-check-label" for="inlineCheckbox2">4 Cyl.</label>
+                            </div>
+                        </div>
+                        <div className='d-flex flex-column w-50 p-2'>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
+                                <label class="form-check-label" for="inlineCheckbox1">3rd Row</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                                <label class="form-check-label" for="inlineCheckbox2">Rear Air</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                                <label class="form-check-label" for="inlineCheckbox2">Sunroof</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                                <label class="form-check-label" for="inlineCheckbox2">Auto</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                                <label class="form-check-label" for="inlineCheckbox2">V8</label>
+                            </div>
+                        </div>
+                        <div className='d-flex flex-column w-50 p-2'>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
+                                <label class="form-check-label" for="inlineCheckbox1">Manual</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                                <label class="form-check-label" for="inlineCheckbox2">CD</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                                <label class="form-check-label" for="inlineCheckbox2">Leather</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                                <label class="form-check-label" for="inlineCheckbox2">Been Painted</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                                <label class="form-check-label" for="inlineCheckbox2">Salvage Title</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='w-100'>
+                <div className='d-flex w-75 p-5'>
+                    <label class="form-check-label" for="inlineCheckbox2">Comments:</label>
+                    <textarea class="form-control" rows="5" columns="25"></textarea>
+                </div>
+                <div className='d-flex justify-content-start w-25 p-5 align-items-center'>
+                    <label for="inputState" className='col'>Set in by:</label>
+                    <select id="inputState" class="form-control col">
+                        <option selected>Choose...</option>
+                        <option>Travis Kunce</option>
+                        <option>Brandon Nash</option>
+                        <option>Darrin Mills</option>
+                    </select>
+                </div>
+                </div>
+                <button type='submit' className='btn btn-primary'>
+                Save
+                </button>
             </form>
         </div>
     )
