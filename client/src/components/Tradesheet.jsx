@@ -65,6 +65,14 @@ const CreateTradesheet = () => {
         setRetail(e.target.value);
     };
 
+    const handleCommentsChange = (event) => {
+        setComments(event.target.value);
+    };
+
+    const handleSetbyChange = (event) => {
+        setSetby(event.target.value);
+    };
+
     const handleOptionChange = (e) => {
         const { name, checked } = e.target;
         setOptions((prevOptions) => ({
@@ -438,6 +446,7 @@ const CreateTradesheet = () => {
                             <label class="form-check-label" htmlFor="wholesale">Wholesale</label>
                         </div>
                     </div>
+                    {errors.options ? <p className='text-danger'>{errors.options.message}</p> : null}
                     <div className='d-flex w-50 p-5'>
                         <div className='d-flex flex-column w-50 p-2'>
                             <div class="form-check form-check-inline">
@@ -613,16 +622,31 @@ const CreateTradesheet = () => {
                 </div>
                 <div className='w-100'>
                     <div className='d-flex w-75 p-5'>
-                        <label class="form-check-label" htmlFor="inlineCheckbox2">Comments:</label>
-                        <textarea class="form-control" rows="5" columns="25"></textarea>
+                        <label class="form-check-label" htmlFor="comments">Comments:</label>
+                        <textarea 
+                        class="form-control" 
+                        rows="5" 
+                        cols="25"
+                        id="comments" 
+                        name="comments"
+                        value={comments}
+                        onChange={handleCommentsChange}
+                        />
                     </div>
+                    {errors.setby ? <p className="text-danger">{errors.setby.message}</p> : null}
                     <div className='d-flex justify-content-start w-25 p-5 align-items-center'>
-                        <label htmlFor="inputState" className='col'>Set in by:</label>
-                        <select id="inputState" class="form-control col">
-                            <option selected>Choose...</option>
-                            <option>Travis Kunce</option>
-                            <option>Brandon Nash</option>
-                            <option>Darrin Mills</option>
+                        <label htmlFor="setby" className='col'>Set in by:</label>
+                        <select 
+                        id="setby" 
+                        class="form-control col"
+                        name="setby"
+                        value={setby}
+                        onChange={handleSetbyChange}
+                        >
+                            <option value= "" selected>Choose...</option>
+                            <option value="Travis Kunce">Travis Kunce</option>
+                            <option value="Brandon Nash">Brandon Nash</option>
+                            <option value ="Darrin Mills">Darrin Mills</option>
                         </select>
                     </div>
                 </div>
