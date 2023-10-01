@@ -45,11 +45,11 @@ const VehicleSchema = new mongoose.Schema({
         minimum: [1, 'Black-book value must be at least 1.'],
     },
     retail: {
-        type: Boolean,
+        type: String,
         required: [true, 'Is this a Retail or Wholesale unit?'],
     },
     tires: {
-        type: Boolean,
+        type: String,
         required: [true, 'Does it need tires?'],
     },
     setby: {
@@ -73,7 +73,11 @@ const VehicleSchema = new mongoose.Schema({
     // TODO: CONVERT OBJECTS TO STRINGS IN THE DATABASE
     carfax: {
         type: String,
-        default: JSON.stringify({ report: false, damage: false, branded: false }),
+        default: JSON.stringify({ 
+            report: false, 
+            damage: false, 
+            branded: false, 
+        }),
         required: [true, 'Please select applicable CarFax fields.'],
     },
     options: {
