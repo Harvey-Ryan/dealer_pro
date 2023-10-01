@@ -72,34 +72,81 @@ const VehicleSchema = new mongoose.Schema({
     },
     // TODO: CONVERT OBJECTS TO STRINGS IN THE DATABASE
     carfax: {
-        type: String,
-        default: JSON.stringify({ 
-            report: false, 
-            damage: false, 
-            branded: false, 
-        }),
-        required: [true, 'Please select applicable CarFax fields.'],
+        report: {
+            type: Boolean,
+            default: false,
+        },
+        damage: {
+            type: Boolean,
+            default: false,
+        },
+        branded: {
+            type: Boolean,
+            default: false,
+        },
+        // required: [true, 'Please select applicable CarFax fields.'],
     },
     options: {
-        type: String,
-        default: JSON.stringify({
-            twobyfour: false,
-            fourbyfour: false,
-            quadsts: false,
-            sixcyl: false,
-            fourcyl: false,
-            thirdrow: false,
-            rearair: false,
-            sunroof: false,
-            autotrans: false,
-            eightcyl: false,
-            manualtrans: false,
-            cdplayer: false,
-            leather: false,
-            painted: false,
-            salvagetitle: false,
-        }),
-        required: [true, 'Please select applicable Options.'],
+            twobyfour: {
+                type: Boolean,
+                default: false,
+            },
+            fourbyfour: {
+                type: Boolean,
+                default: false,
+            },
+            quadsts: {
+                type: Boolean,
+                default: false,
+            },
+            sixcyl: {
+                type: Boolean,
+                default: false,
+            },
+            fourcyl: {
+                type: Boolean,
+                default: false,
+            },
+            thirdrow: {
+                type: Boolean,
+                default: false,
+            },
+            rearair: {
+                type: Boolean,
+                default: false,
+            },
+            sunroof: {
+                type: Boolean,
+                default: false,
+            },
+            autotrans: {
+                type: Boolean,
+                default: false,
+            },
+            eightcyl: {
+                type: Boolean,
+                default: false,
+            },
+            manualtrans: {
+                type: Boolean,
+                default: false,
+            },
+            cdplayer: {
+                type: Boolean,
+                default: false,
+            },
+            leather: {
+                type: Boolean,
+                default: false,
+            },
+            painted: {
+                type: Boolean,
+                default: false,
+            },
+            salvagetitle: {
+                type: Boolean,
+                default: false,
+            },
     },
 }, { timestamps: true });
 
