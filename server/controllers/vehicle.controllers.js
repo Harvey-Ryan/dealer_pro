@@ -66,7 +66,7 @@ const updateVehicle = (req, res) => {
         errors.stocknumber = "Stock number is required.";
     }
     if (!vin || vin.length < 17) {
-        errors.vin = "VIN is required.";
+        errors.vin = "17-Digit VIN is required.";
     }
     if (!make || make.length < 1) {
         errors.make = "Make is required.";

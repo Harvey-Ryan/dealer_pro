@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from'react-router-dom'
 import Dashboard from './components/Dashboard'
-import Tradesheet from './components/Tradesheet'
+import CreateTradesheet from './components/Tradesheet'
 import EditTradesheet from './components/EditTradesheet'
 import Layout from './components/Layout'
 import NotFound from './components/NotFound'
@@ -23,7 +23,7 @@ function App() {
                 <Route index element={<Dashboard />} /> {/* TODO */}
               </Route>
               <Route path="tradesheet" >
-                <Route index element={<Tradesheet />} /> {/* TODO */}
+                <Route index element={<CreateTradesheet />} /> {/* TODO */}
                 <Route path=":id" element={<EditTradesheet />} /> {/* TODO */}
               </Route>
               <Route path="*" element={<NotFound />} /> {/* TODO */}
