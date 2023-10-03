@@ -10,13 +10,10 @@ const Nav = () => {
                 {/* <div className=''> */}
                     <ul className='nav d-flex'>
                         <li className='nav-item'>
-                            <a className='nav-link' href='#'>Home</a>
+                            <a className='nav-link' href='/dashboard'>Home</a>
                         </li>
                         <li className='nav-item'>
-                            <a className='nav-link' href='#'>About</a>
-                        </li>
-                        <li className='nav-item'>
-                            <a className='nav-link' href='#'>Contact</a>
+                            <a className='nav-link' href='/tradesheet'>Create Tradesheet</a>
                         </li>
                     </ul>
                 {/* </div> */}

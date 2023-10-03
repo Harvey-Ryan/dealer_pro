@@ -58,7 +58,8 @@ const updateVehicle = (req, res) => {
         mechanical,
         appearance,
         carfax,
-        options
+        options,
+        storename
     } = req.body;
 
     const errors = {};
@@ -140,7 +141,8 @@ const updateVehicle = (req, res) => {
         mechanical,
         appearance,
         carfax,
-        options
+        options,
+        storename
     }, { new: true })
         .then((vehicle) => {
             if (!vehicle) {

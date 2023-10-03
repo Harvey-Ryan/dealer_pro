@@ -41,6 +41,7 @@ export const vehicleStateModel = {
         painted: false,
         salvagetitle: false,
     },
+    storename: '',
 };
 
 
@@ -107,15 +108,24 @@ const CreateTradesheet = () => {
             });
     };
 
+    // GET TODAY'S DATE
+    const today = new Date();
+
+    // FORMAT DATE
+    const formattedDate = today.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    });
+
     return (
         <div className='printer d-flex container flex-column'>
-            <div className=' d-flex w-100 justify-content-between'>
+            <div className=' d-flex w-100 justify-content-start'>
                 <div className='d-flex flex-column'>
-                    <h2 className="text-danger whitespace">Store Name</h2>
-                    <p className="whitespace">Trade Sheet</p>
-                    <p className="text-danger whitespace">Insert Date</p>
+                    <h2 className="text-danger whitespace">Frank Fletcher Subaru</h2>
+                    <h3 className="whitespace">Trade Sheet</h3>
+                    <p className="whitespace">{formattedDate}</p>
                 </div>
-                <a className='align top' href='/dashboard'>Back to Dashboard</a>
             </div>
             <form className='d-flex flex-column align-items-center' type="POST" onSubmit={handleSubmit}>
                 {errors.vehicle && errors.vehicle.carfax ? (<p className='text-danger'>{errors.vehicle.carfax.message}</p>) : null}

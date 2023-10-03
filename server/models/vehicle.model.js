@@ -147,7 +147,12 @@ const VehicleSchema = new mongoose.Schema({
                 type: Boolean,
                 default: false,
             },
-    },
+            // TEMPORARY FOR TESTING
+        },
+        storename: {
+                type: String,
+                default: "Frank Fletcher Subaru",
+        },
 }, { timestamps: true });
 
 const Vehicle = mongoose.model('dealer_pro', VehicleSchema);

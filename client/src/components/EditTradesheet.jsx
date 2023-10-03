@@ -94,6 +94,14 @@ const EditTradesheet = () => {
                 }
             });
     };
+    console.log(vehicle);
+
+    // FORMAT DATE
+    const formattedDate = new Date(vehicle.createdAt).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    });
 
     if (!vehicle) {
         return <div>Loading...</div>;
@@ -101,13 +109,13 @@ const EditTradesheet = () => {
 
     return (
         <div className='printer d-flex container flex-column'>
-            <div className=' d-flex w-100 justify-content-between'>
+            <div className=' d-flex w-100 justify-content-START'>
                 <div className='d-flex flex-column'>
-                    <h2 className="text-danger whitespace">Store Name</h2>
-                    <p className="whitespace">Trade Sheet</p>
-                    <p className="text-danger whitespace">Insert Date</p>
+                    <h2 className="whitespace">{vehicle.storename}</h2>
+                    <h3 className="whitespace">Trade Sheet</h3>
+                    <p className="whitespace">{formattedDate}</p>
                 </div>
-                <a className='align top' href='/dashboard'>Back to Dashboard</a>
+                {/* <a className='align top' href='/dashboard'>Back to Dashboard</a> */}
             </div>
             <form className='d-flex flex-column align-items-center' type="PUT" onSubmit={handleSubmit}>
                 {errors && errors.carfax ? (<p className='text-danger'>{errors.carfax}</p>) : null}
