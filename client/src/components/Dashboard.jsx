@@ -1,13 +1,16 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import VehicleDataTable from './VehicleDataTable';
 
 
 const Dashboard = () => {
-
-
+    
     return (
-        <div className="padded">
-            <h1>Dashboard Test</h1>
+        <div className='w-80'>
+            <VehicleDataTable />
         </div>
-    )
-};
+    );
+    };
+
 
 export default Dashboard;
