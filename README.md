@@ -19,17 +19,17 @@ Completed:
 
 Backlog:
 
-  #Figure out why GitHub Node.js build script is struggling to follow the path to package.json
+  -Figure out why GitHub Node.js build script is struggling to follow the path to package.json
 
-  #Finish up Deployment with Github Workflow scripts
+  -Finish up Deployment with Github Workflow scripts
 
-  #Re-work /tradesheet && /tradesheet/id to be more user-friendly
+  -Re-work /tradesheet && /tradesheet/id to be more user-friendly
 
-  #Create a printer-friendly display of a single vehicle object
+  -Create a printer-friendly display of a single vehicle object
 
-  #Re-work UI and CSS with a more polished presentation
+  -Re-work UI and CSS with a more polished presentation
 
-  #Login/Reg:
+  -Login/Reg:
     -Ensure user is logged in on all routes.
     -Store and re-use User's 'storename' on /tradesheet.
       -Only allow access to data for vehicles associated
