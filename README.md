@@ -5,17 +5,17 @@ Built using MERN:
 
 Completed:
 
-  Create Tradesheets: /tradesheet
+  -Create Tradesheets: /tradesheet
 
-  Edit Tradesheets: /tradesheet/id
+  -Edit Tradesheets: /tradesheet/id
 
-  Display All Vehicles: /dashboard
+  -Display All Vehicles: /dashboard
 
-  Delete Tradesheets
+  -Delete Tradesheets
 
-  DB hosted w/ Atlas
+  -DB hosted w/ Atlas
 
-  EC2 instance up and running
+  -EC2 instance up and running
 
 Backlog:
 
