@@ -79,6 +79,13 @@ const VehicleDataTable = ({ expandableRows }) => {
             striped: true,
         },
         {
+            name: 'Year',
+            selector: 'year',
+            sortable: true,
+            selector: row => row.year,
+            striped: true,
+        },
+        {
             name: 'Make',
             selector: 'make',
             sortable: true,
@@ -93,17 +100,15 @@ const VehicleDataTable = ({ expandableRows }) => {
             striped: true,
         },
         {
-            name: 'Year',
-            selector: 'year',
+            name: 'ACV',
+            selector: 'bookedat',
             sortable: true,
-            selector: row => row.year,
-            striped: true,
-        },
-        {
-            name: 'Set By',
-            selector: 'setby',
-            sortable: true,
-            selector: row => row.setby,
+            selector: (row) => row.bookedat.toLocaleString('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+            }),
             striped: true,
         },
         {
@@ -112,6 +117,20 @@ const VehicleDataTable = ({ expandableRows }) => {
             sortable: true,
             selector: row => row.retail,
             striped: true,
+            conditionalCellStyles: [
+                {
+                    when: (row) => row.retail === 'Retail',
+                    style: {
+                        backgroundColor: '#A3FFAB', // Softer green
+                    },
+                },
+                {
+                    when: (row) => row.retail !== 'Retail',
+                    style: {
+                        backgroundColor: '#FFA3A3', // Softer red
+                    },
+                },
+            ],
         },
     ];
 
