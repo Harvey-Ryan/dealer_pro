@@ -1,4 +1,4 @@
-# dealer-pro
+# Dealer Pro
 Built using MERN:
 - DB hosted on Atlas
 - Vite for React
@@ -20,13 +20,10 @@ Completed:
 
 Backlog:
 
-  - Figure out why GitHub Node.js build script is struggling to follow the path to package.json
-
-  - Finish up Deployment with Github Workflow scripts
-
   - Re-work /tradesheet && /tradesheet/id to be more user-friendly
 
   - Create a printer-friendly display of a single vehicle object
+    to replace the current create/edit pages to appease Frank.
 
   - Re-work UI and CSS with a more polished presentation
 
