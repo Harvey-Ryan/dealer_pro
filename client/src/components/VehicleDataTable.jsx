@@ -48,7 +48,9 @@ const VehicleDataTable = ({ expandableRows }) => {
 
             // CLOSE EXPANDED ROW
             if (expandedRows.includes(id)) {
-                setExpandedRows(expandedRows.filter(rowId => rowId !== id));
+                // setExpandedRows(expandedRows.filter(rowId => rowId !== id));
+                const updatedExpandedRows = expandedRows.filter((rowId) => rowId !== id);
+                setExpandedRows(updatedExpandedRows);
             }
 
             const response = await axios.get('http://localhost:8000/api/vehicle');
@@ -97,8 +99,6 @@ const VehicleDataTable = ({ expandableRows }) => {
             selector: row => row.year,
             striped: true,
         },
-        // { name: 'Options', selector: 'options', sortable: true },
-        // { name: 'Comments', selector: 'comments', sortable: true },
         {
             name: 'Set By',
             selector: 'setby',
@@ -139,11 +139,20 @@ const VehicleDataTable = ({ expandableRows }) => {
                 <h3 className="d-flex">Recent Trades:</h3>
                 <div className='container p-0 border border-secondary rounded'>
                     <DataTable
-                        // title="Recent Trades"
                         columns={columns}
                         data={data}
                         expandableRows
                         expandableRowsComponent={ExpandedComponent}
+                        expandableRowExpanded={(row) => expandedRows.includes(row._id)}
+                        onRowExpandToggled={(state, row) => {
+                            if (state) {
+                                // If the row is expanded, add its ID to expandedRows
+                                setExpandedRows([...expandedRows, row._id]);
+                            } else {
+                                // If the row is collapsed, remove its ID from expandedRows
+                                setExpandedRows(expandedRows.filter((rowId) => rowId !== row._id));
+                            }
+                        }}
                         progressComponent={<CustomLoader />}
                         theme='custom'
                         pagination
