@@ -4,6 +4,7 @@ Built using MERN:
 - Vite for React
 
 Completed:
+  - Deployed on AWS
 
   - Create Tradesheets: /tradesheet
 
