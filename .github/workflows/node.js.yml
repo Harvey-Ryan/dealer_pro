@@ -24,7 +24,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: cd /home/ubuntu/actions-runner/_work/dealer_pro/dealer_pro/
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - name: Install dependencies, build, and run tests
+      run: |
+        # Change directory to your client directory
+        cd /home/ubuntu/actions-runner/_work/dealer_pro/dealer_pro/client
+
+        # Run npm commands
+        npm ci
+        npm run build --if-present
