@@ -5,6 +5,7 @@ Built using MERN:
 
 Completed:
   - Deployed on AWS
+    - http://3.144.47.37/dashboard
 
   - Create Tradesheets: /tradesheet
 
