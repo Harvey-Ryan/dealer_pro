@@ -5,25 +5,25 @@ Built using MERN:
 
 Completed:
 
-  -Create Tradesheets: /tradesheet
+  - Create Tradesheets: /tradesheet
 
-  -Edit Tradesheets: /tradesheet/id
+-Edit Tradesheets: /tradesheet/id
 
-  -Display All Vehicles: /dashboard
+-Display All Vehicles: /dashboard
 
-  -Delete Tradesheets
+-Delete Tradesheets
 
-  -DB hosted w/ Atlas
+-DB hosted w/ Atlas
 
-  -EC2 instance up and running
+-EC2 instance up and running
 
 Backlog:
 
-  -Figure out why GitHub Node.js build script is struggling to follow the path to package.json
+-Figure out why GitHub Node.js build script is struggling to follow the path to package.json
 
-  -Finish up Deployment with Github Workflow scripts
+-Finish up Deployment with Github Workflow scripts
 
-  -Re-work /tradesheet && /tradesheet/id to be more user-friendly
+-Re-work /tradesheet && /tradesheet/id to be more user-friendly
 
   -Create a printer-friendly display of a single vehicle object
 
