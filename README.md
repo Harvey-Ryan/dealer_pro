@@ -30,7 +30,7 @@ Backlog:
   - Re-work UI and CSS with a more polished presentation
 
   - Login/Reg:
-    -- Ensure user is logged in on all routes.
-     -- Store and re-use User's 'storename' on /tradesheet.
-      -- Only allow access to data for vehicles associated
-         w/ logged-in User's 'storename'.
+    - Ensure user is logged in on all routes.
+    - Store and re-use User's 'storename' on /tradesheet.
+    - Only allow access to data for vehicles associated
+      w/ logged-in User's 'storename'.
