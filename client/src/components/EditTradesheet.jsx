@@ -281,12 +281,12 @@ const EditTradesheet = () => {
                                 className="form-check-input"
                                 type="radio"
                                 id="poor"
-                                value="poor"
+                                value="Poor"
                                 name="mechanical"
                                 checked={vehicle.mechanical === 'Poor'}
                                 onChange={handleInputChange}
                             />
-                            <label className="form-check-label" htmlFor="inlineCheckbox3">Poor</label>
+                            <label className="form-check-label" htmlFor="poor">Poor</label>
                         </div>
                     </div>
                     <div className='d-flex flex-column w-50 p-5'>
@@ -319,7 +319,7 @@ const EditTradesheet = () => {
                             <input className="form-check-input"
                                 type="radio"
                                 id="poor"
-                                value="poor"
+                                value="Poor"
                                 name="appearance"
                                 checked={vehicle.appearance === 'Poor'}
                                 onChange={handleInputChange}

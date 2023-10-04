@@ -151,7 +151,6 @@ const VehicleSchema = new mongoose.Schema({
         },
         storename: {
                 type: String,
-                default: "Frank Fletcher Subaru",
         },
 }, { timestamps: true });
 
